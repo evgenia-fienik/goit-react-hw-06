@@ -1,10 +1,16 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
-import { persistStore, persistReducer, FLUSH } from "redux-persist";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import {
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
+import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import contactsReduser from "./contactsSlice";
 import filtersReduser from "./filtersSlice";
-import { combineReducers } from "@reduxjs/toolkit";
 
 const persistConfig = {
   key: "contacts",
